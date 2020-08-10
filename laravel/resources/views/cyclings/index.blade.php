@@ -14,10 +14,17 @@
         <br>
         <p>CRUD実装に使ったもので、サイクリングで行ってきた場所やお店を纏めています。</p>
         <p>また、部分検索も実装しています</p>
-        <form class="form-inline" action="{{ route('cyclings.create')}}" method="get">
-          @csrf
-          <input type="submit" class="btn btn-info" value="新規追加">
-        </form>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <form class="form-inline" action="{{ route('cyclings.create')}}" method="get">
+                @csrf
+                <input type="submit" class="btn btn-info" value="新規追加">
+              </form>
+            </form>
+          </div>
+        </div>
+      </div>
         <!-- 部分検索 -->
         <p>任意の文字を入力することで検索が可能です。場所と住所が該当となります。</p>
         <p>また、空欄のまま検索すると全件表示されます。</p>
@@ -34,7 +41,7 @@
         </div>
 
 @if($cyclings->count())
-        <table border="1" width="500" cellpadding="3">
+        <table border="1" class="col-md-11" cellpadding="3">
           <tr align="center">
             <th>場所</th>
             <th>詳細</th>
