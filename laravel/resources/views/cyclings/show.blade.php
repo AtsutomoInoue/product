@@ -28,6 +28,19 @@
             <!-- コメント欄は改行を含めるのでnl2brを使用 -->
             <td colspan="4">{!! nl2br(e($cyclings->comment)) !!}</td>
           </tr>
+          <th colspan="3">
+            <form class="form-inline" action="{{ route('cyclings.edit', $cyclings->id)}}" method="get">
+              @csrf
+              <input type="submit" class="btn btn-info" value="編集">
+            </form>
+          </th>
+          <th colspan="2">
+            <form class="" action="{{ route('cyclings.destroy', $cyclings->id)}}" method="post">
+              @csrf
+              @method('DELETE')
+              <input type="submit" class="btn btn-info"value="削除" onclick="delete_alert(event);return false;">
+            </form>
+          </th>
         </table>
       </div>
       </div>

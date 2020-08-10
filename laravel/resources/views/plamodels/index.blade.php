@@ -44,8 +44,6 @@
           <tr align="center">
             <th>名前</th>
             <th>詳細</th>
-            <th>編集</th>
-            <th>削除</th>
           </tr>
           @foreach ($plamodels as $plamodel)
           <tr>
@@ -54,19 +52,6 @@
               <form class="form-inline" action="{{ route('plamodels.show',$plamodel->id)}}" method="get">
                 @csrf
                 <input type="submit" class="btn btn-info" value="詳細">
-              </form>
-            </th>
-            <th>
-              <form class="form-inline" action="{{ route('plamodels.edit',$plamodel->id)}}" method="get">
-                @csrf
-                <input type="submit" class="btn btn-info" value="編集">
-              </form>
-            </th>
-            <th>
-              <form class="" action="{{ route('plamodels.destroy', $plamodel->id)}}" method="post">
-                @csrf
-                @method('DELETE')
-                <input type="submit" class="btn btn-info"value="削除" onclick="delete_alert(event);return false;">
               </form>
             </th>
           </tr>

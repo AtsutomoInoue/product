@@ -6,7 +6,7 @@
     <div class="col-md-8">
       <div class="card">
         <div class="card-header"><h1>編集</h1></div>
-          <p><a href="{{ route('plamodels.index')}}">一覧画面へ戻る</a></p>
+        
           @if ($errors->any())
           <ul>
             @foreach ($errors->all() as $error)
@@ -48,8 +48,17 @@
                 <p>コメント：<textarea name="comment" class="form-control">{{ $plamodels->comment }}</textarea></p>
               </div>
             </div>
-            <input type="submit" name="" value="編集する">
-          </form>
+          <div class="form-group row mb-2">
+            <div class="col-md-8 offset-md-4">
+              <div style="display:inline-flex">
+                  <input type="submit" class="btn btn-info" value="編集する">
+                </form>
+                <a class="btn btn-link" href="{{ route('plamodels.index') }}">
+                  キャンセル
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

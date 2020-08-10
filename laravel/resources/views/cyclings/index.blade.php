@@ -45,8 +45,6 @@
           <tr align="center">
             <th>場所</th>
             <th>詳細</th>
-            <th>編集</th>
-            <th>削除</th>
           </tr>
           @foreach ($cyclings as $cycling)
           <tr>
@@ -56,21 +54,7 @@
                 @csrf
                 <input type="submit" class="btn btn-info" value="詳細">
               </form>
-            </th>
-            <th>
-              <form class="form-inline" action="{{ route('cyclings.edit',$cycling->id)}}" method="get">
-                @csrf
-                <input type="submit" class="btn btn-info" value="編集">
-              </form>
-            </th>
-            <th>
-              <form class="" action="{{ route('cyclings.destroy', $cycling->id)}}" method="post" >
-                @csrf
-                @method('DELETE')
-                <input type="submit" class="btn btn-info" value="削除" onclick="delete_alert(event);return false;">
-              </form>
-            </th>
-          </tr>
+            </tr>
           @endforeach
         </table>
         {{ $cyclings->render() }}
