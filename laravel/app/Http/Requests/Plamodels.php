@@ -33,7 +33,7 @@ class Plamodels extends FormRequest
      {
          return[
            'name.required' => '名前を入力してください。',
-           'price.numeric' => '価格は数字のみ入れてください。',
+           'price.numeric' => '価格は半角数字のみ入れてください。',
            'released.numeric' => '発売年月は数字のみ入れてください。',
            'released.digits' => '発売年月は6桁で入れてください。',
          ];

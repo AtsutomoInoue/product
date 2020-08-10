@@ -10,6 +10,8 @@ class Plamodel extends Model
         'name',
         'maker',
         'price',
-        'released'
+        'released',
+        'point',
+        'comment',
     ];
 }

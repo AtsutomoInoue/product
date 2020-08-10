@@ -104,6 +104,7 @@ class PlamodelController extends Controller
         'maker' => $request->maker,
         'price' => $request->price,
         'released' => $request->released,
+        'point' => $request->point,
         'comment' => $request->comment
       ];
       Plamodel::where('id', $id)->update($update);
