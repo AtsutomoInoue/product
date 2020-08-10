@@ -85,10 +85,6 @@
                     作成物ページ
                 </div>
                 <div class="links">
-                    <a href="{{ route('login') }}">{{ __('ログイン') }}</a>
-                    <a href="{{ route('register') }}">{{ __('ユーザー登録') }}</a>
-                    <br>
-                    <br>
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
