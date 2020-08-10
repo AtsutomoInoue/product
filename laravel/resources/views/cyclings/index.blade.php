@@ -57,10 +57,10 @@
               </form>
             </th>
             <th>
-              <form class="" action="{{ route('cyclings.destroy', $cycling->id)}}" method="post">
+              <form class="" action="{{ route('cyclings.destroy', $cycling->id)}}" method="post" >
                 @csrf
                 @method('DELETE')
-                <input type="submit" class="btn btn-info" value="削除">
+                <input type="submit" class="btn btn-info" value="削除" onclick="delete_alert(event);return false;">
               </form>
             </th>
           </tr>
