@@ -4,12 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <h1>タスク管理表</h1>
+        <h1>タスク詳細</h1>
+        <a href="/" class="btn btn-primary">戻る</a>
         <div class="card">
-      @foreach ($tasks as $task)
-      <a href="/{{ $task ->id }}">
-        <li>{!! nl2br(e($task->title)) !!}</li></a>
-      @endforeach
+      <p>{{ $task->title }}</p>
+      <p>{{ $task->body }}</p>
         </div>
       </div>
     </div>

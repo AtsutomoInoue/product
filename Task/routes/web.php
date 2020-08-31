@@ -14,7 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'TasksController@index');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/{id}', 'TasksController@show')->where('id','[0-9]+');
