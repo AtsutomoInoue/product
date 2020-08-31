@@ -20,6 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/login/github', 'Auth\LoginController@redirectToProvider');
+Route::get('/login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::group(['middleware' =>['auth', 'can:user']], function(){
 
 Route::get('changepassword', 'HomeController@showChangePasswordForm');
 Route::post('changepassword', 'HomeController@changePassword')->name('changepassword');
@@ -27,7 +31,20 @@ Route::post('changepassword', 'HomeController@changePassword')->name('changepass
 Route::resource('/cyclings', 'CyclingController');
 Route::resource('/plamodels', 'PlamodelController');
 
-Route::get('/login/github', 'Auth\LoginController@redirectToProvider');
-Route::get('/login/github/callback', 'Auth\LoginController@handleProviderCallback');
-
 Route::get('/sample','SampleController@index');
+
+Route::get('/posts', 'PostsController@index');
+Route::resource('posts', 'PostsController');
+Route::resource('comments', 'CommentsController',['only'=>['store']]);
+
+Route::get('/holiday','CalenderController@getHoliday');
+Route::post('/holiday','CalenderController@postHoliday');
+Route::get('/holiday/{id}','CalenderController@getHolidayId');
+Route::delete('/holiday','CalenderController@deleteHoliday');
+//Route::get('/calendar','CalenderController@index');
+});
+
+Route::group(['middleware' =>['auth', 'can:admin']], function(){
+
+  //Route::get('admin', 'AdminController');
+});
