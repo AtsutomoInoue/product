@@ -31,6 +31,20 @@ class TasksController extends Controller
       Task::create($request->all());
 
       return redirect('/');
+    }
 
+    public function edit(int $id)
+    {
+      $task = Task::findOrFail($id);
+      return view('tasks.edit', ['task' => $task]);
+    }
+
+    public function update(Tasks $request, $id)
+    {
+      $task = Task::findOrFail($id);
+
+      $task->update($request->all());
+
+      return redirect('/' . $task->id);
     }
 }

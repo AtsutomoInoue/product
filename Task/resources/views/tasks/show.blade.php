@@ -4,9 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <h1>タスク詳細</h1>
+        <h1 style="display:inline">タスク詳細</h1>
+        <a syle="display: inline-block;" href="/" class="btn btn-primary mb-4 text-left">一覧に戻る</a>
         <div class="mb-4 text-right">
-        <a syle="display: inline-block;" href="/" class="btn btn-primary">一覧に戻る</a>
+        <a href="/edit/{{ $task->id }}" class="btn btn-secondary">編集</a>
         </div>
           <div class="card">
             <h1>{{ $task->title }}</h1>
