@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'TasksController@index');
 Route::get('/{id}', 'TasksController@show')->where('id','[0-9]+');
+Route::get('/create', 'TasksController@create');
+Route::post('/create', 'TasksController@store');
