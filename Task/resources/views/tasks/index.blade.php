@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-
+  <div class="row justify-content-center">
       <div class="col-md-8">
         <h1>タスク管理表</h1>
         <a href="/create" class="btn btn-primary">新規作成</a>
@@ -15,6 +15,6 @@
       @endforeach
         </div>
       </div>
-
+  </div>
 </div>
 @endsection

@@ -25,12 +25,14 @@ class Tasks extends FormRequest
     {
         return [
             'title' => 'required',
+            'limit' => 'required',
         ];
     }
     public function messages()
     {
         return[
             'title.required' => '題名を入れてください。',
+            'limit.required' => '期限を入れてください。',
         ];
     }
 }

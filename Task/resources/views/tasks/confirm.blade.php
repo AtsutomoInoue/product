@@ -15,8 +15,7 @@
         </form>
         </div>
           <div class="card">
-            <h1>題名：{{ $task->title }}</h1>
-            <h5>期限：{{ $task->limit }}</h5>
+            <h1>{{ $task->title }}</h1>
             <hr>
             <p>{!! nl2br(e($task->body)) !!}</p>
         </div>

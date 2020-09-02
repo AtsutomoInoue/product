@@ -9,14 +9,17 @@
           <form action="/edit/{{ $task->id }}" method="post">
             @csrf
             @method('PUT')
+            @if ($errors->any())
+            <ul>
+              @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+            @endif
             <p>題名(入力必須)：<input type="text" name="title" value="{{ $task->title }}"></p>
-              @if ($errors->any())
-              <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-              </ul>
-              @endif
+              <h5>期限</h5>
+              <p><input type="date" name="limit" value="{{ $task->limit }}"/></p>
+              <h5>内容</h5>
             <p><textarea name="body" rows="10" cols="50">{{ $task->body }}</textarea></p>
             <p><input type="submit" class="btn btn-primary" value="更新"></p>
           </form>
