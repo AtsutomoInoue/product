@@ -1,3 +1,4 @@
+<?php use Carbon\Carbon; ?>
 @extends('layouts.app')
 
 @section('content')
@@ -14,6 +15,11 @@
           <button type="submit" class="btn btn-danger" onclick="return confirm('削除します。宜しいですか？')" >削除</button>
         </form>
         </div>
+        @if(strtotime(Carbon::now()->toDateString()) > strtotime($task->limit))
+        <h4 class="bg-danger text-dark">期日超過です。処理してください。<br>
+        @elseif(strtotime(Carbon::now()->toDateString()) == strtotime($task->limit))
+        <h4 class="bg-warning text-dark">期日です。<br>
+        @endif
           <div class="card">
             <h1>題名：{{ $task->title }}</h1>
             <h5>期限：{{ $task->limit }}</h5>
