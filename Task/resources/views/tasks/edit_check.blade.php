@@ -15,12 +15,10 @@
           <button type="submit" class="btn btn-danger" onclick="return confirm('削除します。宜しいですか？')" >削除</button>
         </form>
         </div>
-        @if(($task->process_id == 1) or ($task->process_id == 2))
         @if(strtotime(Carbon::now()->toDateString()) > strtotime($task->limit))
         <h4 class="bg-danger text-dark">期日超過です。処理してください。<br>
         @elseif(strtotime(Carbon::now()->toDateString()) == strtotime($task->limit))
         <h4 class="bg-warning text-dark">期日です。<br>
-        @endif
         @endif
           <div class="card">
             <h1>題名：{{ $task->title }}</h1>

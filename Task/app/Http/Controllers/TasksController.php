@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Task;
+use App\Process;
 use App\Http\Requests\Tasks;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,14 @@ class TasksController extends Controller
     public function show(int $id)
     {
       $task = Task::findOrFail($id);
-      return view('tasks.show',['task' => $task]);
+      $tas = $task->id;
+
+      $process = Task::select()
+              ->join('processes','processes.id','=','tasks.process_id')
+              ->where('tasks.id',$tas)
+              ->first();
+
+      return view('tasks.show',['task' => $task, 'process' => $process]);
     }
 
     public function create()
@@ -35,7 +43,11 @@ class TasksController extends Controller
     public function edit(int $id)
     {
       $task = Task::findOrFail($id);
-      return view('tasks.edit', ['task' => $task]);
+
+      $proc = Process::select('id','process_name')
+            ->get();
+
+      return view('tasks.edit', ['task' => $task, 'proc' => $proc]);
     }
 
     public function update(Tasks $request, $id)

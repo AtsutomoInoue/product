@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    protected $fillable = ['title', 'body', 'limit'];
+    protected $fillable = ['title', 'body', 'limit', 'process_id'];
+
+
 }

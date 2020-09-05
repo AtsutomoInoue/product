@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateTasksTable extends Migration
+class CreateProcessesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class UpdateTasksTable extends Migration
      */
     public function up()
     {
-        Schema::table('tasks', function (Blueprint $table) {
-            $table->date('limit')->nullable()->after('body');
-            $table->integer('process_id')->nullable()->after('limit')->default(1);
+        Schema::create('processes', function (Blueprint $table) {
+          $table->integer('id');
+          $table->string('process_name');
+
+          $table->primary('id');
         });
     }
 
@@ -26,8 +28,6 @@ class UpdateTasksTable extends Migration
      */
     public function down()
     {
-        Schema::table('tasks', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('processes');
     }
 }
