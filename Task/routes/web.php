@@ -20,3 +20,4 @@ Route::post('/create', 'TasksController@store');
 Route::get('/edit/{id}', 'TasksController@edit')->where('id', '[0-9]');
 Route::put('/edit/{id}', 'TasksController@update')->where('id', '[0-9]');
 Route::delete('/{id}', 'TasksController@delete')->where('id', '[0-9]');
+Route::get('/test', 'TasksTestController@index');

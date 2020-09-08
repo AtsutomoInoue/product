@@ -28,11 +28,10 @@
           @endforeach
         </div>
         <br>
-        @foreach ($tasks as $task)
-        @if(($task->process_id == 3))
-
         <div class="card">
         <h2>完了したタスク名</h2>
+        @foreach ($tasks as $task)
+        @if(($task->process_id == 3))
         <a href="/{{ $task->id }}">{{$task->title}}</a>
         <hr>
         @endif
