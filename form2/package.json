@@ -18,7 +18,7 @@
         "laravel-jetstream": "^1.2.0",
         "laravel-mix": "^6.0.31",
         "lodash": "^4.17.21",
-        "moment": "^2.29.1",
+        "moment": "^2.29.2",
         "portal-vue": "^2.1.7",
         "postcss-import": "^14.0.2",
         "resolve-url-loader": "^4.0.0",
