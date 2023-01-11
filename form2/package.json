@@ -27,6 +27,6 @@
         "vue-template-compiler": "^2.7.14"
     },
     "dependencies": {
-        "postcss": "^8.4.19"
+        "postcss": "^8.4.21"
     }
 }
